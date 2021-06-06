@@ -1,0 +1,40 @@
+locals {
+  ws = terraform.workspace
+  }
+ vpc_id = {
+   qa-ore = "vpc-02ac77b67342b82f4"
+ }
+vpc_cidr = {
+  "default" = "10.15.4.0/22"
+  "dev-ore" = ""
+  "qa-ore" = "10.15.4.0/22"
+  "prod-ore" = "10.0.0.0/16"
+}
+availability_zones = {
+  "default" = [
+    "us-west-2a",
+    "us-west-2b",
+    "us-west-2c",
+    "us-west-2d"]
+  "dev-ore" = [
+    "us-west-2a",
+    "us-west-2b",
+    "us-west-2c",
+    "us-west-2d"]
+  "qa-ore" = [
+    "us-west-2a",
+    "us-west-2b",
+    "us-west-2c",
+    "us-west-2d"]
+  "prod-ore" = [
+    "us-west-2a",
+    "us-west-2b",
+    "us-west-2c",
+    "us-west-2d"]
+}
+aws_profile = {
+  "default" = "cp-bizapps-dev-ore"
+  "dev-ore" = "cp-bizapps-dev-ore"
+  "qa-ore" = "cp-sec-qa-ore"
+  "prod-ore" = "cp-bizapps-prod-ore"
+}
