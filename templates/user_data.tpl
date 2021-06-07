@@ -14,8 +14,8 @@ teleport:
       data_dir: /var/lib/teleport
 auth_service:
       enabled: true
-      cluster_name: "teleport-tryouts"
-      listen_addr: 192.168.43.67:3025
+      cluster_name: "teleport-cluster"
+      listen_addr: teleport.it-qa.chargepoint.com:3025
       tokens:
       - proxy,node,app:f7adb7ccdf04037bcd2b52ec6010fd6f0caec94ba190b765
 ssh_service:
@@ -55,8 +55,8 @@ sudo systemctl enable teleport
 sudo systemctl start teleport
 sudo systemctl status teleport
 sudo apt install letsencrypt
-sudo certbot certonly --standalone --agree-tos --preferredchallenges http -d teleport.it-qa.chargepoint.com
+# sudo certbot certonly --standalone --agree-tos --preferredchallenges http -d teleport.it-qa.chargepoint.com
 
-sudo tctl users add teleport-admin ubuntu
+# sudo tctl users add teleport-admin ubuntu
 
 
